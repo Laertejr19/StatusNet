@@ -1,0 +1,101 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --primary: #3b82f6;
+    --success: #10b981;
+    --warning: #f59e0b;
+    --danger: #ef4444;
+  }
+
+  body {
+    @apply text-gray-900 bg-gray-50;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  ::-webkit-scrollbar {
+    @apply w-2 h-2;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-gray-100;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-gray-400 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-gray-500;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply px-4 py-2 rounded-lg font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-primary {
+    @apply bg-primary-600 text-white hover:bg-primary-700;
+  }
+
+  .btn-secondary {
+    @apply bg-gray-200 text-gray-800 hover:bg-gray-300;
+  }
+
+  .btn-success {
+    @apply bg-success-500 text-white hover:bg-success-600;
+  }
+
+  .btn-danger {
+    @apply bg-danger-500 text-white hover:bg-danger-600;
+  }
+
+  .input {
+    @apply w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition;
+  }
+
+  .card {
+    @apply bg-white rounded-xl shadow-card p-6;
+  }
+
+  .card-hover {
+    @apply hover:shadow-card-hover transition-shadow;
+  }
+
+  .status-badge {
+    @apply px-3 py-1 rounded-full text-xs font-semibold inline-flex items-center gap-1;
+  }
+
+  .status-online {
+    @apply bg-green-100 text-green-800;
+  }
+
+  .status-offline {
+    @apply bg-red-100 text-red-800;
+  }
+
+  .status-slow {
+    @apply bg-yellow-100 text-yellow-800;
+  }
+
+  .status-unknown {
+    @apply bg-gray-100 text-gray-800;
+  }
+}
+
+@layer utilities {
+  .animate-pulse-slow {
+    animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary-600 to-purple-600;
+  }
+
+  .glass {
+    @apply backdrop-blur-md bg-white/70 border border-white/20;
+  }
+}
